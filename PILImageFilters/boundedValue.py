@@ -11,3 +11,9 @@ class BoundedValue(object):
 
     def __str__(self):
         return str(self.value)
+
+
+class HexBoundedValue(BoundedValue):
+
+    def __init__(self, value, min_value=0, max_value=255):
+        super(HexBoundedValue, self).__init__(value, min_value, max_value)
