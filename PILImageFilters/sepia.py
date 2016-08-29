@@ -1,12 +1,10 @@
 from builtins import range
 
-from . import HexBoundedValue
+from BaseFilter import BaseFilter
+from BoundedValue import HexBoundedValue
 
 
-class Sepia():
-
-    def __init__(self, image):
-        self.image = image.copy()
+class Sepia(BaseFilter):
 
     def apply(self):
 

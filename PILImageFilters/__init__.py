@@ -1,2 +1,2 @@
-from boundedValue import HexBoundedValue
-from sepia import Sepia
+from BoundedValue import HexBoundedValue
+from Sepia import Sepia
