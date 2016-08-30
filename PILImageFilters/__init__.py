@@ -6,3 +6,4 @@ from Mosaic import Mosaic
 from Pencil import Pencil
 from Solarize import Solarize
 from Molten import Molten
+from Ice import Ice
