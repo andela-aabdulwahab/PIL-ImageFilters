@@ -8,13 +8,11 @@ class Sepia(BaseFilter):
 
     def apply(self):
 
-        width, height = self.image.size
-
         # get the image pixel
         pixels = self.image.load()
 
-        for w in range(width):
-            for h in range(height):
+        for w in range(self.width):
+            for h in range(self.height):
                 current_pixel = pixels[w, h]
 
                 R = (25756 * current_pixel[0] + 50397 *

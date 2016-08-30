@@ -12,7 +12,6 @@ class OilPainting(BaseFilter):
         self.brush_size = bounded_brush_size.value
         bounded_roughness = BoundedValue(roughness, 1, 255)
         self.roughness = bounded_roughness.value
-        width, height = self.image.size
         gray_image = self.image.convert('L')
 
         def reset():
@@ -22,7 +21,7 @@ class OilPainting(BaseFilter):
 
         if self.image.mode != 'RGBA':
             self.image = self.image.convert('RGBA')
-        background = Image.new('RGBA', (width, height))
+        background = Image.new('RGBA', (self.width, self.height))
 
         gray_pixels = gray_image.load()
         pixels = self.image.load()
@@ -31,23 +30,23 @@ class OilPainting(BaseFilter):
         roughness = self.roughness + 1
         count, A, R, G, B = [[0] * roughness for i in range(5)]
 
-        for w in range(width):
+        for w in range(self.width):
             left = w - self.brush_size
             if left < 0:
                 left = 0
 
             right = w + self.brush_size
-            if right > width - 1:
-                right = width - 1
+            if right > self.width - 1:
+                right = self.width - 1
 
-            for h in range(height):
+            for h in range(self.height):
                 top = h - self.brush_size
                 if top < 0:
                     top = 0
 
                 bottom = h + self.brush_size
-                if bottom > height - 1:
-                    bottom = height - 1
+                if bottom > self.height - 1:
+                    bottom = self.height - 1
 
                 reset()
 
