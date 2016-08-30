@@ -11,11 +11,11 @@ class Sepia(BaseFilter):
         width, height = self.image.size
 
         # get the image pixel
-        pixel = self.image.load()
+        pixels = self.image.load()
 
         for w in range(width):
             for h in range(height):
-                current_pixel = pixel[w, h]
+                current_pixel = pixels[w, h]
 
                 R = (25756 * current_pixel[0] + 50397 *
                      current_pixel[1] + 12386 * current_pixel[2]) >> 16
@@ -29,6 +29,6 @@ class Sepia(BaseFilter):
                 G = HexBoundedValue(G).value
                 B = HexBoundedValue(B).value
 
-                pixel[w, h] = R, G, B
+                pixels[w, h] = R, G, B
 
         return self.image
