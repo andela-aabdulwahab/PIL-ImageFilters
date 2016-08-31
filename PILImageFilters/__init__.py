@@ -1,4 +1,3 @@
-from BoundedValue import HexBoundedValue
 from Sepia import Sepia
 from OilPainting import OilPainting
 from Comic import Comic
@@ -7,3 +6,7 @@ from Pencil import Pencil
 from Solarize import Solarize
 from Molten import Molten
 from Ice import Ice
+from GlowingEdge import GlowingEdge
+from Aqua import Aqua
+from Pinch import Pinch
+from PaperCut import PaperCut

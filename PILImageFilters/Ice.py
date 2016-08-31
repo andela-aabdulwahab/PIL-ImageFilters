@@ -1,7 +1,6 @@
 from builtins import range
 
 from BaseFilter import BaseFilter
-from BoundedValue import BoundedValue
 
 
 class Ice(BaseFilter):
